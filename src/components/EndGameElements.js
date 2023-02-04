@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./endGameElements.module.scss";
 import clsx from "clsx";
-import EndGameStats from "./EndGameStats";
 
 const EndGameElements = ({ numberOfStrikes, resetGame }) => {
     return (
@@ -17,7 +16,6 @@ const EndGameElements = ({ numberOfStrikes, resetGame }) => {
                     Restart Game
                 </button>
             </div>
-            <EndGameStats numberOfStrikes={numberOfStrikes} />
         </div>
     );
 };

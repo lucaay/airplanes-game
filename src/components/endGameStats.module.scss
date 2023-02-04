@@ -1,3 +1,31 @@
-.endGameStats{
+.endGameStats {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(255, 59, 59);
     margin-top: 25px;
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid black;
+
+        &__header {
+            border: 1px solid black;
+
+            &__col {
+                border: 1px solid black;
+                padding: 5px;
+            }
+        }
+
+        &__row {
+            border: 1px solid black;
+
+            &__col {
+                border: 1px solid black;
+                padding: 5px;
+            }
+        }
+    }
 }
