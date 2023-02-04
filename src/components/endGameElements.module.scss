@@ -1,0 +1,24 @@
+
+.endGameElements{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(255, 59, 59);
+    &__restartGame{
+        cursor: pointer;
+        color: greenyellow;
+        border: 0;
+        font-size: 22px;
+        margin-top: 15px;
+        background-color: black;
+        padding: 5px 10px;
+        border-radius: 5px;
+
+        &:hover {
+            color: rgb(255, 59, 59);
+            transition: color 0.25s;
+            text-decoration: underline;
+        }
+    }
+}

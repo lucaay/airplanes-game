@@ -7,15 +7,23 @@ const App = () => {
     const [gridSize, setGridSize] = useState(5);
     const [grid, setGrid] = useState([]);
     const [planePosition, setPlanePosition] = useState(new Array(2).fill(0));
-    
-    const startHandler = () => {
-        setGridSize(6);
 
+    useEffect(() => {
         setPlanePosition([
             Math.floor(Math.random() * gridSize),
             Math.floor(Math.random() * gridSize),
         ]);
+    }, [gridSize]);
 
+    const resetGame = () => {
+        setGameStarted(false);
+        setGridSize(5);
+        setGrid([]);
+        setPlanePosition(new Array(2).fill(0));
+    }
+
+    const startHandler = () => {
+        setGridSize(6);
         setGrid(
             new Array(gridSize).fill(0).map(() => new Array(gridSize).fill(0))
         );
@@ -43,7 +51,7 @@ const App = () => {
                     <h1 className={classes["game__Title"]}>
                         Game Started! Find the plane!
                     </h1>
-                    <Grid grid={grid} planePosition={planePosition} />
+                    <Grid grid={grid} resetGame={resetGame} />
                 </div>
             )}
         </div>

@@ -12,12 +12,41 @@
     }
 
     .game {
-        margin-top: 50px;
+        margin-top: 25px;
 
         &__Title {
             font-size: 24px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
+            animation: fadeOut 1.5s ease-in-out forwards;
+            pointer-events: none;
         }
+    }
+
+    &__startGame {
+        cursor: pointer;
+        color: greenyellow;
+        border: 0;
+        font-size: 22px;
+        margin-top: 15px;
+        background-color: black;
+        padding: 5px 10px;
+        border-radius: 5px;
+
+        &:hover {
+            color: rgb(255, 59, 59);
+            transition: color 0.25s;
+            text-decoration: underline;
+        }
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }

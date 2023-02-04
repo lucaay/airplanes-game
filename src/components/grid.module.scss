@@ -23,11 +23,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 24px;
+        font-size: 14px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    .planeCell{
+
+    .planeCell {
         background-color: #000;
         color: white;
     }
+}
+
+.gridGameOverState {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.gameOver {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(255, 59, 59);
 }
