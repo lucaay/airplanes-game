@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, {useState } from "react";
 import classes from "./grid.module.scss";
 import clsx from "clsx";
 import EndGameElements from "./EndGameElements";

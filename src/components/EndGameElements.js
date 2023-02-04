@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./endGameElements.module.scss";
-import clsx from "clsx";
 
 const EndGameElements = ({ numberOfStrikes, resetGame }) => {
     return (
