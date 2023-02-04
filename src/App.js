@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect,useCallback, useState } from "react";
 import classes from "./app.module.scss";
 import Grid from "./components/Grid";
 import EndGameStats from "./components/EndGameStats";
@@ -9,6 +9,7 @@ const App = () => {
     const [grid, setGrid] = useState([]);
     const [planePosition, setPlanePosition] = useState(new Array(2).fill(0));
     const [pastGamesData, setPastGamesData] = useState([]);
+    const [time, setTime] = useState(0);
 
     useEffect(() => {
         setPlanePosition([
@@ -16,6 +17,17 @@ const App = () => {
             Math.floor(Math.random() * gridSize),
         ]);
     }, [gridSize]);
+
+    //create timer
+    const startTime = useCallback(() => {
+        //useCallback to prevent infinite loop
+        let seconds = 0;
+        const timer = setInterval(() => {
+            seconds++;
+            setTime(seconds);
+        }, 1000);
+        return timer;
+    }, []);
 
     const resetGame = () => {
         setGameStarted(false);
@@ -25,6 +37,7 @@ const App = () => {
     };
 
     const startHandler = () => {
+        startTime();
         setGridSize(6);
         setGrid(
             new Array(gridSize).fill(0).map(() => new Array(gridSize).fill(0))
@@ -57,6 +70,7 @@ const App = () => {
                         grid={grid}
                         resetGame={resetGame}
                         setPastGamesData={setPastGamesData}
+                        time={time}
                     />
                 </div>
             )}

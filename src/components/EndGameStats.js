@@ -12,11 +12,11 @@ const EndGameStats = ({ pastGamesData }) => {
             });
 
             setData(
-                pastGamesData.map((game) => {
+                pastGamesData.map((game, i) => {
                     return (
                         <tr
                             className={classes["endGameStats__table__row"]}
-                            key={game.date}
+                            key={i}
                         >
                             <td
                                 className={

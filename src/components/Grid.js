@@ -3,25 +3,10 @@ import classes from "./grid.module.scss";
 import clsx from "clsx";
 import EndGameElements from "./EndGameElements";
 
-const Grid = ({ grid, resetGame, setPastGamesData }) => {
+const Grid = ({ grid, resetGame, setPastGamesData, time }) => {
     // grid[i][j] === 1 ? "plane" : "empty"
     const [numberOfStrikes, setNumberOfStrikes] = useState(0);
     const [planeFound, setPlaneFound] = useState(false);
-    const [time, setTime] = useState(0);
-
-    //create timer
-    const startTime = useCallback(() => { //useCallback to prevent infinite loop
-        let seconds = 0;
-        const timer = setInterval(() => {
-            seconds++;
-            setTime(seconds);
-        }, 1000);
-        return timer;
-    }, []);
-
-    useEffect(() => {
-        startTime();
-    }, [startTime]);
 
     const gameOverHandler = () => {
         const gameData = {
