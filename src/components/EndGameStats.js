@@ -6,6 +6,11 @@ const EndGameStats = ({ pastGamesData }) => {
 
     useEffect(() => {
         if (pastGamesData.length > 0) {
+            //sort pastGamesData by number of strikes in descending order
+            pastGamesData.sort((a, b) => {
+                return b.numberOfStrikes - a.numberOfStrikes;
+            });
+
             setData(
                 pastGamesData.map((game) => {
                     return (
