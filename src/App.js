@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import classes from "./app.module.scss";
 import Grid from "./components/Grid";
+import EndGameStats from "./components/EndGameStats";
 
 const App = () => {
     const [gameStarted, setGameStarted] = useState(false);
     const [gridSize, setGridSize] = useState(5);
     const [grid, setGrid] = useState([]);
     const [planePosition, setPlanePosition] = useState(new Array(2).fill(0));
+    const [pastGamesData, setPastGamesData] = useState([]);
 
     useEffect(() => {
         setPlanePosition([
@@ -20,7 +22,7 @@ const App = () => {
         setGridSize(5);
         setGrid([]);
         setPlanePosition(new Array(2).fill(0));
-    }
+    };
 
     const startHandler = () => {
         setGridSize(6);
@@ -51,9 +53,14 @@ const App = () => {
                     <h1 className={classes["game__Title"]}>
                         Game Started! Find the plane!
                     </h1>
-                    <Grid grid={grid} resetGame={resetGame} />
+                    <Grid
+                        grid={grid}
+                        resetGame={resetGame}
+                        setPastGamesData={setPastGamesData}
+                    />
                 </div>
             )}
+            <EndGameStats pastGamesData={pastGamesData} />
         </div>
     );
 };
