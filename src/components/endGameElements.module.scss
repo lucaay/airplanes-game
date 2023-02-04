@@ -1,5 +1,6 @@
 
 .endGameElements{
+    width: 100%;
     margin-top: 10px;
     text-align: center;
     font-size: 24px;
@@ -10,7 +11,6 @@
         color: greenyellow;
         border: 0;
         font-size: 22px;
-        margin-top: 15px;
         background-color: black;
         padding: 5px 10px;
         border-radius: 5px;
@@ -20,5 +20,14 @@
             transition: color 0.25s;
             text-decoration: underline;
         }
+    }
+
+    &__container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 25px;
     }
 }

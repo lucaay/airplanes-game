@@ -17,7 +17,6 @@ const Grid = ({ grid, resetGame }) => {
                     resetGame={resetGame}
                 />
             ) : null}
-
             <div
                 className={clsx({
                     [classes["grid"]]: true,
@@ -58,6 +57,7 @@ const Grid = ({ grid, resetGame }) => {
                     );
                 })}
             </div>
+
         </>
     );
 };
