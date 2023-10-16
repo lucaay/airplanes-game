@@ -1,6 +1,6 @@
 # Airstrike Grid - A little React game with airplanes
 
-LIVE DEMO: --
+LIVE DEMO: https://airstrike-grid.vercel.app/
 
 EN:
 
